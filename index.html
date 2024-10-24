@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orçamento</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  
+
+</head>
+
+<body>
+
+  <picture class="logo">
+    <img src="./4.png" alt="logo">
+  </picture>
+
+  <div class="container">
+    <h1>MG Orçamentos</h1>
+
+    <form >
+      <p>Nome do Cliente:</p>
+      <input class="form_desc" type="text" id="nome" name="nome" required>
+      <p>Data do Orçamento:</p>
+      <input class="form_desc" type="date" id="data" name="data" required>
+    </form>
+
+    <h1>Descrição</h1>
+
+    <section id="cxdesc">
+      <div class="line_desc">
+        <input  class="qtd" type="number" name="quantidade" id="qtd1"placeholder="QTD">
+        <input class="desc" type="text" id="desc1" name="descricao" required >
+        <input class="valor_uni" type="number" name="valor_uni" id="uni1" placeholder="UNI">
+      </div>
+
+      <div class="line_desc">
+        <input  class="qtd" type="number" name="quantidade" id="qtd2"placeholder="QTD">
+        <input class="desc" type="text" id="desc2" name="descricao" required >
+        <input class="valor_uni" type="number" name="valor_uni" id="uni2" placeholder="UNI">
+      </div>
+
+      <div class="line_desc">
+        <input  class="qtd" type="number" name="quantidade" id="qtd3"placeholder="QTD">
+        <input class="desc" type="text" id="desc3" name="descricao" required >
+        <input class="valor_uni" type="number" name="valor_uni" id="uni3" placeholder="UNI">
+      </div>
+
+      <div class="line_desc">
+        <input  class="qtd" type="number" name="quantidade" id="qtd4"placeholder="QTD">
+        <input class="desc" type="text" id="desc4" name="descricao" required >
+        <input class="valor_uni" type="number" name="valor_uni" id="uni4" placeholder="UNI">
+      </div>
+
+      <div class="line_desc">
+        <input  class="qtd" type="number" name="quantidade" id="qtd5"placeholder="QTD">
+        <input class="desc" type="text" id="desc5" name="descricao" required >
+        <input class="valor_uni" type="number" name="valor_uni" id="uni5" placeholder="UNI">
+      </div>
+
+      <div class="line_desc">
+        <input  class="qtd" type="number" name="quantidade" id="qtd6"placeholder="QTD">
+        <input class="desc" type="text" id="desc6" name="descricao" required >
+        <input class="valor_uni" type="number" name="valor_uni" id="uni6" placeholder="UNI">
+      </div>
+
+      <div class="line_desc">
+        <input  class="qtd" type="number" name="quantidade" id="qtd7"placeholder="QTD">
+        <input class="desc" type="text" id="desc7" name="descricao" required >
+        <input class="valor_uni" type="number" name="valor_uni" id="uni7" placeholder="UNI">
+      </div>
+      
+     
+    </section>
+    <button id="gerar" type="submit">Gerar PDF</button>
+  </div>
+
+
+
+
+</body>
+
+</html>
