@@ -53,6 +53,8 @@ document.getElementById("orcamentoForm").addEventListener("submit", function (ev
     // Pegando os dados do cliente
     const nome = document.getElementById("nome").value;
     const data = document.getElementById("data").value;
+    const tcond = document.getElementById("tcond").value;
+    const fpag = document.getElementById("fpag").value;
 
     // Formatando a data
     const [ano, mes, dia] = data.split('-');
@@ -76,7 +78,7 @@ document.getElementById("orcamentoForm").addEventListener("submit", function (ev
 
     // Criando o template padrão
     const img = new Image();
-    img.src = "/src/img/template.png";
+    img.src = "/src/img/template.jpg";
 
     // Quando a imagem do template carregar, desenha no PDF
     img.onload = function () {
@@ -87,6 +89,23 @@ document.getElementById("orcamentoForm").addEventListener("submit", function (ev
 
         // Adicionando dados do cliente
         doc.text(125, 90, nome);
+
+        // Adicionando os termos e condições
+        const larguraMaxima = 70;
+        const linhasTexto = doc.splitTextToSize(tcond, larguraMaxima);
+        let yPos = 242;
+        linhasTexto.forEach(linha => {
+            doc.text(135, yPos, linha);
+            yPos += 7;
+        });
+
+        // Adicionando a forma de pagamento
+        const linhasTexto2 = doc.splitTextToSize(fpag, larguraMaxima);
+        let yPos2 = 272;
+        linhasTexto2.forEach(linha => {
+            doc.text(135, yPos2, linha);
+            yPos2 += 7;
+        });
 
         // Adicionando a data
         doc.setTextColor(255, 255, 255);
