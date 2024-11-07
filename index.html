@@ -1,86 +1,52 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Orçamento</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mg Móveis e Granito</title>
+    <!-- Meta Tag -->
+    <link rel="shortcut icon" href="src/img/icon.png" type="image/x-icon"> <!-- Icone site -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Orçamento Mg Móveis e Granito" />
+    <meta property="og:image" content="http://127.0.0.1:5500/src/img/logo.png" /> <!-- Logo para envio de link -->
+    <meta property="og:site_name" content="Orçamento mg Móveis e Granito" /> <!-- Nome para envio de site -->
 
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="src/css/style.css">
+
+    <!-- Script jsPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <!-- Script externo -->
+    <script src="src/js/script.js" defer></script>
 </head>
 
 <body>
-
-  <picture class="logo">
-    <img src="./4.png" alt="logo">
+  <picture>
+    <img draggable="false" src="src/img/logo.png" alt="logo">
   </picture>
-
-  <div class="container">
-    <h1>MG Orçamentos</h1>
-
-    <form >
-      <p>Nome do Cliente:</p>
-      <input class="form_desc" type="text" id="nome" name="nome" required>
-      <p>Data do Orçamento:</p>
-      <input class="form_desc" type="date" id="data" name="data" required>
-    </form>
-
-    <h1>Descrição</h1>
-
-    <section id="cxdesc">
-      <div class="line_desc">
-        <input  class="qtd" type="number" name="quantidade" id="qtd1"placeholder="QTD">
-        <input class="desc" type="text" id="desc1" name="descricao" required >
-        <input class="valor_uni" type="number" name="valor_uni" id="uni1" placeholder="UNI">
-      </div>
-
-      <div class="line_desc">
-        <input  class="qtd" type="number" name="quantidade" id="qtd2"placeholder="QTD">
-        <input class="desc" type="text" id="desc2" name="descricao" required >
-        <input class="valor_uni" type="number" name="valor_uni" id="uni2" placeholder="UNI">
-      </div>
-
-      <div class="line_desc">
-        <input  class="qtd" type="number" name="quantidade" id="qtd3"placeholder="QTD">
-        <input class="desc" type="text" id="desc3" name="descricao" required >
-        <input class="valor_uni" type="number" name="valor_uni" id="uni3" placeholder="UNI">
-      </div>
-
-      <div class="line_desc">
-        <input  class="qtd" type="number" name="quantidade" id="qtd4"placeholder="QTD">
-        <input class="desc" type="text" id="desc4" name="descricao" required >
-        <input class="valor_uni" type="number" name="valor_uni" id="uni4" placeholder="UNI">
-      </div>
-
-      <div class="line_desc">
-        <input  class="qtd" type="number" name="quantidade" id="qtd5"placeholder="QTD">
-        <input class="desc" type="text" id="desc5" name="descricao" required >
-        <input class="valor_uni" type="number" name="valor_uni" id="uni5" placeholder="UNI">
-      </div>
-
-      <div class="line_desc">
-        <input  class="qtd" type="number" name="quantidade" id="qtd6"placeholder="QTD">
-        <input class="desc" type="text" id="desc6" name="descricao" required >
-        <input class="valor_uni" type="number" name="valor_uni" id="uni6" placeholder="UNI">
-      </div>
-
-      <div class="line_desc">
-        <input  class="qtd" type="number" name="quantidade" id="qtd7"placeholder="QTD">
-        <input class="desc" type="text" id="desc7" name="descricao" required >
-        <input class="valor_uni" type="number" name="valor_uni" id="uni7" placeholder="UNI">
-      </div>
+    <div class="container">
       
-     
-    </section>
-    <button id="gerar" type="submit">Gerar PDF</button>
-  </div>
+        <h1>Gerar Orçamento</h1>
+        <!-- Formulário -->
+        <form id="orcamentoForm">
+            <label for="nome">Nome do cliente:</label>
+            <input type="text" id="nome" name="nome" required>
 
+            <label for="data">Data do orçamento:</label>
+            <input type="date" id="data" name="data" required>
 
+            <!-- Botão para adicionar item -->
+            <button class="btnAdd" type="button" id="addItemBtnManual">Adicionar Item </button>
 
+            <!-- Board de Itens -->
+            <div id="board"></div>
 
+            <!-- Botão Submit -->
+            <button class="btnAdd" type="submit">Gerar PDF</button>
+        </form>
+    </div>
 </body>
 
 </html>
