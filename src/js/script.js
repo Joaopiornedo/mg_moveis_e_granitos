@@ -127,6 +127,6 @@ document.getElementById("orcamentoForm").addEventListener("submit", function (ev
         doc.text(165, 217, valorTotalItens.toFixed(2)); // Total Geral
 
         // Salvando o PDF
-        doc.save(`Orcamento_${nome}.pdf`);
+        doc.save(`Orçamento_${nome}.pdf`);
     };
 });
